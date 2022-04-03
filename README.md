@@ -1,5 +1,13 @@
 # AngularFrontend
 
+# Telas
+
+## Tela de Listagem das Startups
+![](/res/telaListagem.png)
+
+## Tela de Detalhe das Startups
+![](/res/telaDetalhe.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
