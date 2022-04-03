@@ -1,9 +1,94 @@
-<h2>
-    Listagem
-</h2>
 
-<ul>
-    <li *ngFor="let s of startups">
-        {{s.id_startup}} - {{s.name}} - {{s.location}}
-    </li>
-</ul>
+<main class="row" role="main">
+
+  <section class="col-2">
+    <div class="flex-shrink-0 p-3 bg-dark border-radius-10" style="width: 240px;">
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom">
+        <span class="fs-5 fw-bold">Filtros</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed link-light" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            Home
+          </button>
+          <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-light rounded">Overview</a></li>
+              <li><a href="#" class="link-light rounded">Updates</a></li>
+              <li><a href="#" class="link-light rounded">Reports</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed link-light" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Dashboard
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-light rounded">Overview</a></li>
+              <li><a href="#" class="link-light rounded">Weekly</a></li>
+              <li><a href="#" class="link-light rounded">Monthly</a></li>
+              <li><a href="#" class="link-light rounded">Annually</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed link-light" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Orders
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-light rounded">New</a></li>
+              <li><a href="#" class="link-light rounded">Processed</a></li>
+              <li><a href="#" class="link-light rounded">Shipped</a></li>
+              <li><a href="#" class="link-light rounded">Returned</a></li>
+            </ul>
+          </div>
+        </li>   
+      </ul>
+    </div>
+  </section>
+
+  <section class="col-10">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-light text-center">
+            <tr>
+              <th>Código</th>
+    
+              <th class="w-25">Nome</th>
+    
+              <th class="w-35">Categorias</th>
+    
+              <th class="w-35">Localização</th>
+              
+              <th class="w-35">Empregados</th>
+    
+              <th class="w-35">Série de Investimentos</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            
+            <tr *ngFor="let s of startups">
+                <td class="text-center">{{s.id_startup}}</td>
+          
+                <td><a [routerLink]="['/detailStartup']" class="link-dark rounded">{{s.name}}</a></td>
+    
+                <td>{{s.categories}}</td>
+          
+                <td>{{s.location}}</td>
+    
+                <td class="text-center">{{s.numberEmployers}}</td>
+    
+                <td>{{s.investmentSeries}}</td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </section>
+</main>

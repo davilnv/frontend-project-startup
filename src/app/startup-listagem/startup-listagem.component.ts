@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StartupService } from '../startup.service';
 
 @Component({
   selector: 'app-startup-listagem',
@@ -7,33 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartupListagemComponent implements OnInit {
 
-  startups = [
-    { 
-      id_startup: '1', 
-      name: 'Startup', 
-      location: 'Pernambuco, Brazil', 
-      numberEmployers: '10',
-      investmentseries: 'Angel' 
-    },
-    { 
-      id_startup: '2', 
-      name: 'Startup2', 
-      location: 'Pernambuco, Brazil', 
-      numberEmployers: '10',
-      investmentseries: 'Angel' 
-    },
-    { 
-      id_startup: '3', 
-      name: 'Startup3', 
-      location: 'Pernambuco, Brazil', 
-      numberEmployers: '10',
-      investmentseries: 'Angel' 
-    }
-  ];
+  startups: Array<any> = [];
 
-  constructor() { }
+  constructor(private startupService: StartupService) { }
 
   ngOnInit(): void {
+    this.listStartup();
+  }
+
+  listStartup() {
+    this.startupService.listStartup().subscribe(data => this.startups = data);
   }
 
 }
