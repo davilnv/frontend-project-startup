@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StartupListagemComponent } from './startup-listagem/startup-listagem.component';
 import { StartupService } from './startup.service';
 import { StartupDatailComponent } from './startup-datail/startup-datail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StartupDatailComponent } from './startup-datail/startup-datail.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [StartupService],
   bootstrap: [AppComponent]

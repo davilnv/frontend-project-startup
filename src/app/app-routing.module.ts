@@ -9,7 +9,7 @@ const routes: Routes = [
     component: StartupListagemComponent
   },
   {
-    path: 'detailStartup',
+    path: 'detailStartup/:id',
     component: StartupDatailComponent
   }
 ];

@@ -19,4 +19,8 @@ export class StartupService {
     return this.http.get<any[]>(`${this.startupUrl}`)
   }
 
+  listByIdStartup(id: String) {
+    return this.http.get<any[]>(`${this.startupUrl}/${id}`)
+  }
+
 }

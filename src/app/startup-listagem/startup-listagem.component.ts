@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { StartupService } from '../startup.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { StartupService } from '../startup.service';
 export class StartupListagemComponent implements OnInit {
 
   startups: Array<any> = [];
+
+  queryField = new FormControl();
 
   constructor(private startupService: StartupService) { }
 
